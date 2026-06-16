@@ -1,16 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDidShow, useDidHide } from '@tarojs/taro';
-// 全局样式
+import { useAppStore } from '@/store/useAppStore';
 import './app.scss';
 
 function App(props) {
-  // 可以使用所有的 React Hooks
-  useEffect(() => {});
+  const initFromStorage = useAppStore((state) => state.initFromStorage);
+  const isInitialized = useAppStore((state) => state.isInitialized);
 
-  // 对应 onShow
-  useDidShow(() => {});
+  useEffect(() => {
+    if (!isInitialized) {
+      initFromStorage();
+      console.info('[App] Store initialization triggered');
+    }
+  }, [isInitialized, initFromStorage]);
 
-  // 对应 onHide
+  useDidShow(() => {
+    if (!isInitialized) {
+      initFromStorage();
+    }
+  });
+
   useDidHide(() => {});
 
   return props.children;

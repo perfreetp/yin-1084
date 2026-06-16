@@ -3,13 +3,16 @@
 .container {
   min-height: 100vh;
   background: $color-bg-page;
-  padding-bottom: 120rpx;
+  padding-bottom: 60rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .headerSection {
   background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
   padding: $spacing-lg;
   padding-top: 24rpx;
+  flex-shrink: 0;
 }
 
 .headerTitle {
@@ -48,6 +51,7 @@
 
 .quickActions {
   padding: $spacing-lg;
+  flex-shrink: 0;
 }
 
 .quickTitle {
@@ -66,7 +70,7 @@
   flex: 1;
   background: $color-bg-card;
   border-radius: $radius-lg;
-  padding: $spacing-lg;
+  padding: $spacing-lg $spacing-sm;
   box-shadow: $shadow-card;
   display: flex;
   flex-direction: column;
@@ -80,7 +84,7 @@
 }
 
 .actionIcon {
-  font-size: 48rpx;
+  font-size: 44rpx;
   margin-bottom: $spacing-sm;
 }
 
@@ -97,16 +101,18 @@
   text-align: center;
 }
 
-.recoveryList {
-  padding: 0 $spacing-lg;
-}
-
 .sectionTitle {
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
   margin-bottom: $spacing-md;
   padding: 0 $spacing-lg;
+  flex-shrink: 0;
+}
+
+.recoveryList {
+  padding: 0 $spacing-lg;
+  flex: 1;
 }
 
 .recoveryCard {
@@ -138,7 +144,7 @@
 }
 
 .recoveryIcon {
-  font-size: 44rpx;
+  font-size: 40rpx;
   margin-right: $spacing-md;
 }
 
@@ -243,4 +249,76 @@
 .recoverySize {
   font-size: $font-size-xs;
   color: $color-text-tertiary;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+}
+
+.modalContent {
+  width: 100%;
+  background: $color-bg-card;
+  border-radius: $radius-xl $radius-xl 0 0;
+  padding: $spacing-xl $spacing-lg;
+  padding-bottom: 64rpx;
+}
+
+.modalTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: $spacing-lg;
+}
+
+.formLabel {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.formInput {
+  width: 100%;
+  height: 88rpx;
+  background: $color-bg-page;
+  border-radius: $radius-md;
+  padding: 0 $spacing-lg;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  border: 2rpx solid $color-border;
+}
+
+.submitBtn {
+  width: 100%;
+  height: $button-height-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $spacing-xl;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.submitText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-white;
 }

@@ -44,7 +44,7 @@
 }
 
 .ownerTabText {
-  font-size: $font-size-md;
+  font-size: $font-size-sm;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -55,12 +55,29 @@
 
 .categorySection {
   padding: $spacing-md $spacing-lg 0;
+  background: $color-bg-card;
+}
+
+.categoryRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .categoryLabel {
   font-size: $font-size-sm;
   color: $color-text-tertiary;
-  margin-bottom: $spacing-sm;
+  width: 64rpx;
+  flex-shrink: 0;
+}
+
+.categoryScrollWrap {
+  flex: 1;
+  overflow: hidden;
 }
 
 .categoryScroll {
@@ -69,11 +86,10 @@
 
 .categoryChip {
   display: inline-flex;
-  padding: 10rpx 24rpx;
+  padding: 8rpx 20rpx;
   border-radius: $radius-round;
-  background: $color-bg-card;
+  background: $color-bg-page;
   margin-right: $spacing-sm;
-  box-shadow: $shadow-card;
   transition: all $transition-base;
 
   &:active {
@@ -84,17 +100,31 @@
 
 .categoryChipActive {
   background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
-  box-shadow: none;
 }
 
 .categoryText {
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   color: $color-text-secondary;
   white-space: nowrap;
 }
 
 .categoryTextActive {
   color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+.selectedInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm $spacing-lg;
+  background: rgba(43, 164, 113, 0.08);
+  margin-top: $spacing-sm;
+}
+
+.selectedText {
+  font-size: $font-size-sm;
+  color: $color-primary;
   font-weight: $font-weight-medium;
 }
 
@@ -154,15 +184,139 @@
   color: $color-text-white;
 }
 
-.selectedInfo {
+.emptyState {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: $spacing-sm $spacing-lg;
-  background: rgba(43, 164, 113, 0.06);
+  justify-content: center;
+  padding: 120rpx 32rpx;
 }
 
-.selectedText {
+.emptyIcon {
+  font-size: 80rpx;
+  margin-bottom: $spacing-md;
+}
+
+.emptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+}
+
+.resultModal {
+  width: 100%;
+  max-width: 600rpx;
+  background: $color-bg-card;
+  border-radius: $radius-xl;
+  padding: $spacing-xl $spacing-lg;
+}
+
+.resultHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+}
+
+.resultIcon {
+  font-size: 80rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.resultTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.resultDetail {
+  background: $color-bg-page;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.resultRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+  border-bottom: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.resultLabel {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.resultValue {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.resultStudents {
+  margin-bottom: $spacing-lg;
+}
+
+.resultStudentsTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.studentTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.studentTag {
+  padding: 6rpx 20rpx;
+  background: rgba(43, 164, 113, 0.1);
+  border-radius: $radius-round;
+}
+
+.studentTagText {
   font-size: $font-size-sm;
   color: $color-primary;
+}
+
+.resultCloseBtn {
+  width: 100%;
+  height: $button-height-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.resultCloseText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-white;
 }

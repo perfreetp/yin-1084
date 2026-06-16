@@ -1,0 +1,246 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 120rpx;
+}
+
+.headerSection {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: $spacing-lg;
+  padding-top: 24rpx;
+}
+
+.headerTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  margin-bottom: $spacing-md;
+}
+
+.headerStats {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.headerStat {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: $radius-md;
+  padding: $spacing-md 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerStatValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+}
+
+.headerStatLabel {
+  font-size: $font-size-xs;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 4rpx;
+}
+
+.quickActions {
+  padding: $spacing-lg;
+}
+
+.quickTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.actionGrid {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.actionCard {
+  flex: 1;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.95;
+    transform: scale(0.97);
+  }
+}
+
+.actionIcon {
+  font-size: 48rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.actionName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: 4rpx;
+}
+
+.actionDesc {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  text-align: center;
+}
+
+.recoveryList {
+  padding: 0 $spacing-lg;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  padding: 0 $spacing-lg;
+}
+
+.recoveryCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.95;
+    transform: scale(0.99);
+  }
+}
+
+.recoveryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.recoveryLeft {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.recoveryIcon {
+  font-size: 44rpx;
+  margin-right: $spacing-md;
+}
+
+.recoveryInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.recoveryName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.recoveryClass {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}
+
+.recoveryStatus {
+  padding: 6rpx 20rpx;
+  border-radius: $radius-round;
+  white-space: nowrap;
+  margin-left: $spacing-sm;
+}
+
+.statusCompletedBg {
+  background: rgba(0, 180, 42, 0.1);
+  .recoveryStatusText {
+    color: $color-success;
+  }
+}
+
+.statusInProgressBg {
+  background: rgba(64, 128, 255, 0.1);
+  .recoveryStatusText {
+    color: $color-info;
+  }
+}
+
+.statusPendingBg {
+  background: rgba(255, 125, 0, 0.1);
+  .recoveryStatusText {
+    color: $color-warning;
+  }
+}
+
+.recoveryStatusText {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+}
+
+.recoveryProgress {
+  margin-bottom: $spacing-md;
+}
+
+.recoveryProgressInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-xs;
+}
+
+.recoveryProgressLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.recoveryProgressValue {
+  font-size: $font-size-sm;
+  color: $color-info;
+  font-weight: $font-weight-medium;
+}
+
+.recoveryProgressBar {
+  height: 12rpx;
+  background: $color-divider;
+  border-radius: $radius-round;
+  overflow: hidden;
+}
+
+.recoveryProgressFill {
+  height: 100%;
+  background: linear-gradient(135deg, $color-info 0%, #6BA3FF 100%);
+  border-radius: $radius-round;
+  transition: width $transition-slow;
+}
+
+.recoveryFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recoveryDate {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.recoverySize {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}

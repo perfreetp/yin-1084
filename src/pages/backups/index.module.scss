@@ -1,0 +1,168 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 200rpx;
+}
+
+.topBar {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: $spacing-lg;
+  padding-top: 24rpx;
+}
+
+.topTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  margin-bottom: $spacing-md;
+}
+
+.ownerTabs {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.ownerTab {
+  flex: 1;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.ownerTabActive {
+  background: $color-bg-card;
+}
+
+.ownerTabText {
+  font-size: $font-size-md;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ownerTabTextActive {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+.categorySection {
+  padding: $spacing-md $spacing-lg 0;
+}
+
+.categoryLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-sm;
+}
+
+.categoryScroll {
+  white-space: nowrap;
+}
+
+.categoryChip {
+  display: inline-flex;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-round;
+  background: $color-bg-card;
+  margin-right: $spacing-sm;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.96);
+  }
+}
+
+.categoryChipActive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  box-shadow: none;
+}
+
+.categoryText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  white-space: nowrap;
+}
+
+.categoryTextActive {
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+.backupList {
+  padding: $spacing-md $spacing-lg 0;
+}
+
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $color-bg-card;
+  padding: $spacing-md $spacing-lg;
+  padding-bottom: 48rpx;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: $spacing-md;
+  z-index: 100;
+}
+
+.actionBtn {
+  flex: 1;
+  height: $button-height-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-button;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.btnExport {
+  background: rgba(64, 128, 255, 0.1);
+  border: 2rpx solid rgba(64, 128, 255, 0.3);
+}
+
+.btnArchive {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+.actionText {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}
+
+.btnExportText {
+  color: $color-info;
+}
+
+.btnArchiveText {
+  color: $color-text-white;
+}
+
+.selectedInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm $spacing-lg;
+  background: rgba(43, 164, 113, 0.06);
+}
+
+.selectedText {
+  font-size: $font-size-sm;
+  color: $color-primary;
+}

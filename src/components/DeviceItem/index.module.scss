@@ -1,0 +1,119 @@
+@use '@/styles/variables.scss' as *;
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-sm;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.95;
+    transform: scale(0.99);
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.deviceNo {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.statusCompleted {
+  background: rgba(0, 180, 42, 0.1);
+  .deviceNoText {
+    color: $color-success;
+  }
+}
+
+.statusPartial {
+  background: rgba(255, 125, 0, 0.1);
+  .deviceNoText {
+    color: $color-warning;
+  }
+}
+
+.statusUnbackup {
+  background: rgba(245, 63, 63, 0.1);
+  .deviceNoText {
+    color: $color-error;
+  }
+}
+
+.deviceNoText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.studentName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.className {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: $spacing-sm;
+}
+
+.statusText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}
+
+.textCompleted {
+  color: $color-success;
+}
+
+.textPartial {
+  color: $color-warning;
+}
+
+.textUnbackup {
+  color: $color-error;
+}
+
+.oversizeBadge {
+  margin-top: 6rpx;
+  padding: 2rpx 12rpx;
+  background: rgba(245, 63, 63, 0.1);
+  border-radius: $radius-round;
+}
+
+.oversizeText {
+  font-size: $font-size-xs;
+  color: $color-error;
+  white-space: nowrap;
+}
